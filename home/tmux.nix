@@ -88,8 +88,8 @@
       set -g status-left ""
       set -g status-right "#[fg=brightblack]#S"
       set -g status-justify centre
-      set -g window-status-format "#[fg=brightblack] #I #W "
-      set -g window-status-current-format "#[fg=white,bold] #I #W "
+      set -g window-status-format "#[fg=brightblack] #I #W#{?window_zoomed_flag, Z,} "
+      set -g window-status-current-format "#[fg=white,bold] #I #W#{?window_zoomed_flag, Z,} "
       set -g status-position bottom
     '';
   };
