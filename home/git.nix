@@ -3,7 +3,9 @@
 {
   programs.git = {
     enable = true;
-    settings.user.name = "Lucas Santos";
-    settings.user.email = "lsantos7654@gmail.com";
+    extraConfig = {
+      user.name = "Lucas Santos";
+      user.email = "lsantos7654@gmail.com";
+    };
   };
 }
