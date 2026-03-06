@@ -4,23 +4,23 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+    enableAutosuggestions = true;
+    enableSyntaxHighlighting = true;
 
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "sudo" "fzf" ];
     };
 
-    initContent = lib.mkMerge [
-      (lib.mkBefore ''
-        # p10k instant prompt (must be at very top of .zshrc)
-        if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
-          source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
-        fi
-        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      '')
-      ''
+    initExtraFirst = ''
+      # p10k instant prompt (must be at very top of .zshrc)
+      if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+        source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+      fi
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+    '';
+
+    initExtra = ''
         # Environment
         export EDITOR=nvim
         export PATH=$HOME/.local/bin:$PATH
@@ -263,8 +263,7 @@
         }
 
         compdef _hivemind_completion hivemind
-      ''
-    ];
+    '';
 
     shellAliases = {
       # Editor
