@@ -17,7 +17,7 @@
     tree
     uv
     zsh-powerlevel10k
-    neofetch
+    fastfetch
     cmatrix
 
     # Neovim dependencies
