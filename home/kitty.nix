@@ -5,7 +5,7 @@
     enable = true;
     font = {
       name = "Hack Nerd Font";
-      size = 15;
+      size = 12;
     };
     settings = {
       hide_window_decorations = "titlebar-only";
@@ -15,6 +15,7 @@
       enable_audio_bell = "no";
       term = "xterm-256color";
       macos_option_as_alt = "both";
+      confirm_os_window_close = 0;
 
       # Solarized Dark Higher Contrast
       background = "#001e26";
