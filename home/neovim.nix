@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.neovim = {
@@ -38,7 +38,5 @@
     ];
   };
 
-  home.file.".config/nvim" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dothome/config/nvim";
-  };
+  home.file.".config/nvim".source = ../config/nvim;
 }

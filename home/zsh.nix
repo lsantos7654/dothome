@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.zsh = {
@@ -321,6 +321,5 @@
   };
 
   # Powerlevel10k config (symlinked so `p10k configure` can edit in-place)
-  home.file.".p10k.zsh".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dothome/config/p10k.zsh";
+  home.file.".p10k.zsh".source = ../config/p10k.zsh;
 }
