@@ -8,6 +8,7 @@
     ./tmux.nix
     ./neovim.nix
     ./git.nix
+    ./spotify-tools.nix
   ];
 
   home.stateVersion = "25.11";
